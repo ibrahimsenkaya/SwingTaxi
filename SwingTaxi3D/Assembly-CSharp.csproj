@@ -45,10 +45,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraFollow.cs" />
-     <Compile Include="Assets\Move.cs" />
-     <Compile Include="Assets\PlayerTrigger.cs" />
-     <Compile Include="Assets\touchTest.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\Void.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_Events\DefaultEvent.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_Events\IS_FloatEvent.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_Events\IS_VoidEvent.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_Listeners\DefaultEventListener.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_Listeners\IEventListener.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_Listeners\IS_FloatEventListener.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_Listeners\IS_VoidEventListener.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_UnityEvents\UnityFloatEvent.cs" />
+     <Compile Include="Assets\IsenkayaEventSystem\_UnityEvents\UnityVoidEvent.cs" />
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CheckTaxiSituation.cs" />
+     <Compile Include="Assets\Scripts\Move.cs" />
+     <Compile Include="Assets\Scripts\ObstacleCreator.cs" />
+     <Compile Include="Assets\Scripts\PlayerTrigger.cs" />
+     <Compile Include="Assets\Scripts\ResetFearmeter.cs" />
+     <Compile Include="Assets\Scripts\touchTest.cs" />
      <None Include="Assets\Minimalist Free v2.4.2\Documentation\Readme.txt" />
      <None Include="Assets\Minimalist Free v2.4.2\Shaders\Minimalist Sky.shader" />
      <None Include="Assets\Minimalist Free v2.4.2\Shaders\LightweightRenderPipeline\Minimalist Standard LWRP.shader" />
