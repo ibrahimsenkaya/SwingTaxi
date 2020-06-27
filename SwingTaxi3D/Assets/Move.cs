@@ -6,8 +6,8 @@ public class Move : MonoBehaviour
 {
     Rigidbody rb;
     public bool RightDown, LeftDown;
-    [SerializeField] float DegreeIncrease = 1f;
-    float YDegree;
+    [SerializeField] float DegreeIncrease = 10f;
+    public float YDegree;
     int FrameCounter;
     void Start()
     {
@@ -28,14 +28,14 @@ public class Move : MonoBehaviour
 
         }
         transform.rotation = Quaternion.Euler(0, YDegree, 0);
-        rb.velocity = transform.forward * 5f;
+        rb.velocity = transform.forward * 15f;
         if (FrameCounter % 100 <= 50)
         {
-            rb.AddForce(transform.right * 50);
+            rb.AddForce(transform.right * Random.Range(25, 50));
         }
         else
         {
-            rb.AddForce(transform.right * -50);
+            rb.AddForce(transform.right * -Random.Range(25, 50));
         }
     }
 
@@ -56,4 +56,6 @@ public class Move : MonoBehaviour
     {
         LeftDown = false;
     }
+
+   
 }
