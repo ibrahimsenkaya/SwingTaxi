@@ -68,6 +68,6 @@ public class Move : MonoBehaviour
         SwingAxis = Random.Range(0, 2) == 0 ?  -1:1;
     }
 
-    
+
 
 }

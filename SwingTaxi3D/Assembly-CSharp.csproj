@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CheckTaxiSituation.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
+     <Compile Include="Assets\Scripts\ObstacleClear.cs" />
      <Compile Include="Assets\Scripts\ObstacleCreator.cs" />
      <Compile Include="Assets\Scripts\PlayerTrigger.cs" />
      <Compile Include="Assets\Scripts\ResetFearmeter.cs" />

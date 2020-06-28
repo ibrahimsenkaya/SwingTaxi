@@ -8,7 +8,7 @@ public class PlayerTrigger : MonoBehaviour
     public float FearMeter;
     [SerializeField] Image FearMeterImage;
     [SerializeField] float FearMeterMax;
-    [SerializeField] IS_VoidEvent FailEvent,FinishEvent;
+    [SerializeField] IS_VoidEvent FailEvent, FinishEvent;
 
     private void Awake()
     {
@@ -42,9 +42,10 @@ public class PlayerTrigger : MonoBehaviour
         }
         if (other.tag == "Finish")
         {
-            
-           FinishEvent.Raise();
+
+            FinishEvent.Raise();
         }
+    
     }
 
     void CheckFearMeter()
