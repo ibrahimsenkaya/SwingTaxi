@@ -6,9 +6,11 @@ public class Move : MonoBehaviour
 {
     Rigidbody rb;
     bool RightDown, LeftDown;
-    [SerializeField] float DegreeIncrease = 50f;
+    [SerializeField] float TouchDegreeIncrease = 50f;
+    [SerializeField] float SwingMin, Swingmax;
     [HideInInspector]
     public float YDegree;
+    [HideInInspector]
     public int FrameCounter;
     float SwingForce;
     int SwingAxis;
@@ -30,15 +32,15 @@ public class Move : MonoBehaviour
         #region Changing taxi rotation each frame
         if (RightDown)
         {
-            YDegree += DegreeIncrease;
+            YDegree += TouchDegreeIncrease;
         }
         else if (LeftDown)
         {
-            YDegree -= DegreeIncrease;
+            YDegree -= TouchDegreeIncrease;
 
         }
         //Swing Axis
-        YDegree += SwingAxis * Random.Range(.2f, .5f);
+        YDegree += SwingAxis * Random.Range(SwingMin, Swingmax);
         transform.rotation = Quaternion.Euler(0, YDegree, 0);
         #endregion
         #region Changing MoveAxis by Degree or Time

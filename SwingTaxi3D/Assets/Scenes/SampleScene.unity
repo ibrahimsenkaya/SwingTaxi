@@ -460,8 +460,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fed74746aed434f861097e7a898863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DegreeIncrease: 0.7
+  TouchDegreeIncrease: 0.7
+  SwingMin: 0.2
+  Swingmax: 0.5
   YDegree: 0
+  FrameCounter: 0
 --- !u!114 &92212548
 MonoBehaviour:
   m_ObjectHideFlags: 0
