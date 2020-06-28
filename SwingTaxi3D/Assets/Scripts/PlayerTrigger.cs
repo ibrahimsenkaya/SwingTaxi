@@ -21,7 +21,9 @@ public class PlayerTrigger : MonoBehaviour
         {
             CheckFearMeter();
             rb.AddForce(transform.right * -700);
+            movingScript.ChangeAxis();
             movingScript.YDegree = 0;
+            movingScript.FrameCounter = 0;
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
             Debug.Log("girdi");
@@ -30,7 +32,9 @@ public class PlayerTrigger : MonoBehaviour
         {
             CheckFearMeter();
             rb.AddForce(transform.right * 700);
+            movingScript.ChangeAxis();
             movingScript.YDegree = 0;
+            movingScript.FrameCounter = 0;
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
             Debug.Log("girdi");
@@ -38,6 +42,7 @@ public class PlayerTrigger : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             Debug.Log("obstacle");
+            //movingScript.ChangeAxis();
             CheckFearMeter();
         }
         if (other.tag == "Finish")
@@ -45,7 +50,7 @@ public class PlayerTrigger : MonoBehaviour
 
             FinishEvent.Raise();
         }
-    
+
     }
 
     void CheckFearMeter()

@@ -9,16 +9,18 @@ public class Move : MonoBehaviour
     [SerializeField] float DegreeIncrease = 50f;
     [HideInInspector]
     public float YDegree;
-    int FrameCounter;
+    public int FrameCounter;
     float SwingForce;
     int SwingAxis;
     void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
-        InvokeRepeating("ChooseAxisAndForce", 2f, 1f);
+        //InvokeRepeating("ChangeAxis", 4f, 4f);
+        ChooseAxis();
     }
-    private void OnDisable() {
-        rb.velocity=Vector3.zero;
+    private void OnDisable()
+    {
+        rb.velocity = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -35,12 +37,18 @@ public class Move : MonoBehaviour
             YDegree -= DegreeIncrease;
 
         }
+        //Swing Axis
+        YDegree += SwingAxis * Random.Range(.2f, .5f);
         transform.rotation = Quaternion.Euler(0, YDegree, 0);
         #endregion
+        #region Changing MoveAxis by Degree or Time
+        if (YDegree >= 17f || YDegree <= -17f) { ChangeAxis(); FrameCounter = 0; }
+        else if (FrameCounter % 250 == 0) { ChangeAxis(); }
+        #endregion
+
 
         //Moving Forward
         rb.velocity = transform.forward * 15f;
-        rb.AddForce((SwingAxis*transform.right)*SwingForce);
 
     }
 
@@ -62,10 +70,13 @@ public class Move : MonoBehaviour
         LeftDown = false;
     }
 
-    void ChooseAxisAndForce()
+    void ChooseAxis()
     {
-        SwingForce = Random.Range(50, 150);
-        SwingAxis = Random.Range(0, 2) == 0 ?  -1:1;
+        SwingAxis = Random.Range(0, 2) == 0 ? -1 : 1;
+    }
+    public void ChangeAxis()
+    {
+        SwingAxis = SwingAxis == -1 ? 1 : -1;
     }
 
 
